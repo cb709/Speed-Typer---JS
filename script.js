@@ -10,30 +10,15 @@ let userText = "";
 let errorCount = 0;
 let startTime;
 let questionText = "";
-let questions = [
-  "A quick brown fox jumps over the lazy dog.",
-  "Good programmers write code that humans can understand.",
-  "First, think about the problem. Then, write the code.",
-  "There is no shortcut other than hard work.",
-  "Perfection is achieved not when there is nothing more to add, but rather when there is nothing more to take away."
-]
 
 // Load and display question
-// fetch("./texts.json")
-//   .then((res) => res.json())
-//   .then((data) => {
-//     questionText = data[Math.floor(Math.random() * data.length)];
-//     question.innerHTML = questionText;
-//     console.log(data)
-//   });
+fetch("./texts.json")
+  .then((res) => res.json())
+  .then((data) => {
+    questionText = data[Math.floor(Math.random() * data.length)];
+    question.innerHTML = questionText;
+  });
 
-function setQuestions (data) {
-  questionText = data[Math.floor(Math.random() * data.length)];
-  question.innerHTML = questionText;
-  console.log(questionText)
-}
-
-setQuestions(questions)
 
 
 // checks the user typed character and displays accordingly
